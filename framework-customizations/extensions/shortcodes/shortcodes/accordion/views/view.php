@@ -6,9 +6,9 @@
  * @var array $atts
  */
 $grid_class = isset($atts['grid']) ? "{$atts['grid']}" : "";
+$i = 1;
 ?>
 
-<?php $i = 1; ?>
 <!-- accordions -->
 <div class="accordion" id="accordionExample">
     <?php foreach ( fw_akg( 'tabs', $atts, array() ) as $tab ) : ?>
@@ -23,11 +23,16 @@ $grid_class = isset($atts['grid']) ? "{$atts['grid']}" : "";
                      <?php echo do_shortcode( $tab['tab_content'] ); ?>
                     <?php if (isset($tab['gallery']) && $tab['gallery'] == true):?>
                     <!-- Галерея -->
-                    <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
+                        <?php
+                        // Временное решение
+                        $id = 'aniimated-thumbnials-' . rand(1, 100);
+                        ?>
+                    <div id="<?= $id ?>" class="list-unstyled row clearfix">
                         <?php foreach ($tab['image'] as $img):
                             $srcFull = wp_get_attachment_image_url($img['attachment_id'], 'full');
                             $description = wp_get_attachment_caption($img['attachment_id']) ?? '';
                             $alt = get_post_meta($img['attachment_id'], '_wp_attachment_image_alt', true);
+                            $grid_class = $tab['grid'] ?? '';
                             ?>
 
                             <div class="<?php echo esc_attr($grid_class); ?> my-1">
@@ -35,6 +40,15 @@ $grid_class = isset($atts['grid']) ? "{$atts['grid']}" : "";
                                     <img class="img-fluid img-thumbnail mx-auto d-block" src="<?= $srcFull; ?>" alt="<?= $alt; ?>">
                                 </a>
                             </div>
+                            <script>
+                                // Временное решение
+                                $(function () {
+                                    $('#<?= $id ?>').lightGallery({
+                                        thumbnail: true,
+                                        selector: 'a'
+                                    });
+                                });
+                            </script>
                         <?php endforeach;?>
                     </div>
                     <?php endif;?>

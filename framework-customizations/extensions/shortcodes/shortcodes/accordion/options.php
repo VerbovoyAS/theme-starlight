@@ -38,10 +38,11 @@ $options = [
                         'label' => __('Choose Image', 'fw'),
                         'desc'  => __('Either upload a new, or choose an existing image from your media library', 'fw')
                     ],
-                    'gridd'    => [
-                        'label'   => __('Button Color', 'fw'),
-                        'desc'    => __('Choose a color for your button', 'fw'),
+                    'grid'    => [
+                        'label'   => __('Количество элементов', 'fw'),
+                        'desc'    => __('Количество отображаемых элементов', 'fw'),
                         'type'    => 'select',
+                        'value'   => 'col-xl-12 col-lg-12 col-md-12 col-sm-12',
                         'choices' => [
                             'col-xl-3 col-lg-4 col-md-6 col-sm-12'    => __('4 столбца', 'fw'),
                             'col-xl-4 col-lg-6 col-md-6 col-sm-12'    => __('3 столбца', 'fw'),
