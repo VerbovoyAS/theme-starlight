@@ -139,6 +139,42 @@ function hashtag_widgets_init()
             'after_title'   => '</h3>',
         ]
     );
+
+    register_sidebar(
+        [
+            'name'          => esc_html__('Sidebar footer 1', 'hashtag'),
+            'id'            => 'sidebar-footer-1',
+            'description'   => esc_html__('Add widgets here.', 'hashtag'),
+            'before_widget' => '<div id="%1$s" class="col-12 col-lg-3 offset-lg-1 mb-3 widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h5>',
+            'after_title'   => '</h5>',
+        ]
+    );
+
+    register_sidebar(
+        [
+            'name'          => esc_html__('Sidebar footer 2', 'hashtag'),
+            'id'            => 'sidebar-footer-2',
+            'description'   => esc_html__('Add widgets here.', 'hashtag'),
+            'before_widget' => '<div id="%1$s" class="col-12 col-lg-4 mb-3 widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h5>',
+            'after_title'   => '</h5>',
+        ]
+    );
+
+    register_sidebar(
+        [
+            'name'          => esc_html__('Sidebar footer 3', 'hashtag'),
+            'id'            => 'sidebar-footer-3',
+            'description'   => esc_html__('Add widgets here.', 'hashtag'),
+            'before_widget' => '<div id="%1$s" class="col-12 col-lg-4 mb-3 widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h5>',
+            'after_title'   => '</h5>',
+        ]
+    );
 }
 
 add_action('widgets_init', 'hashtag_widgets_init');
