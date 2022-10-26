@@ -29,7 +29,8 @@ $defaultImg = 'https://i.pinimg.com/originals/c3/5d/f3/c35df3a6a3b629a7170837d73
                     <img src="https://creativo.one/lessons/les5669/01.jpg" class="card-img" alt="...">
                     <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
                         <h1 class="card-title"><?php the_title(); ?></h1>
-                        <p class="card-text"><?php the_excerpt(); ?></p>
+                        <!-- Добавить тут заголовок второго уровня-->
+                        <!-- <p class="card-text">--><?php //the_excerpt(); ?><!--</p>-->
                     </div>
                 </div>
             </div>
@@ -124,7 +125,7 @@ $defaultImg = 'https://i.pinimg.com/originals/c3/5d/f3/c35df3a6a3b629a7170837d73
         $nextPost = get_next_post();
         if (!empty($nextPost)) :
             $getPrevPostImg = get_the_post_thumbnail_url($nextPost->ID);
-            $nextPostImg = $getPrevPostImg ? $getPrevPostImg : $defaultImg;
+            $nextPostImg = $getPrevPostImg ?: $defaultImg;
             ?>
         <div class="col">
             <div class="d-flex row g-0">

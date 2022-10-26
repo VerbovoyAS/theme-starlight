@@ -84,12 +84,16 @@ get_footer();
                         while (have_posts()) : the_post();
                             get_template_part('template-parts/content-post', get_post_type());
                         endwhile;
-                        the_posts_navigation();
                         else :
                             get_template_part('template-parts/content', 'none');
                         endif;
                         ?>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col my-4">
+                    <?php the_posts_navigation();?>
                 </div>
             </div>
         </div>

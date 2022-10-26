@@ -22,8 +22,9 @@ get_header();
                 <div class="card bg-dark text-white mb-2">
                     <img src="https://creativo.one/lessons/les5669/01.jpg" class="card-img" alt="...">
                     <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-                        <h1 class="card-title"><?php the_title(); ?></h1>
-                        <p class="card-text"><?php the_excerpt(); ?></p>
+                        <h1 class="card-title 1"><?php the_title(); ?></h1>
+<!--                        Добавить тут заголовок второго уровня-->
+<!--                        <p class="card-text">--><?php //the_excerpt(); ?><!--</p>-->
                     </div>
                 </div>
             </div>
@@ -83,12 +84,7 @@ get_header();
                         while ($query->have_posts()) : $query->the_post();
                             ?>
                             <?php
-                            if (has_post_thumbnail()) {
-                                $img_url = get_the_post_thumbnail_url();
-                            } else {
-                                // $img_url = get_template_directory_uri().'/assets/img/team/team1.jpg';
-                                $img_url = 'https://i.pinimg.com/originals/c3/5d/f3/c35df3a6a3b629a7170837d73ed41b93.jpg';
-                            }
+                            $img_url = get_the_post_thumbnail_url() ?: 'https://i.pinimg.com/originals/c3/5d/f3/c35df3a6a3b629a7170837d73ed41b93.jpg';
                             ?>
 
                             <div class="col">
