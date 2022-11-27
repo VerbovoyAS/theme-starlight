@@ -2,7 +2,7 @@
     die('Forbidden');
 }
 
-$path = '/framework-customizations/extensions/shortcodes/shortcodes/blog-news-cards/static/';
+$path = '/framework-customizations/extensions/shortcodes/shortcodes/blog-news-owl/static/';
 
 wp_enqueue_script(
     'custom-script-owl-jquery',
