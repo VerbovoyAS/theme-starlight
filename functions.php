@@ -189,7 +189,11 @@ function hashtag_scripts()
 
     wp_enqueue_style(
         'hashtag-style-boostrap-5',
-        'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'
+        'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css'
+    );
+    wp_enqueue_style(
+        'hashtag-font-awesome',
+        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'
     );
     wp_enqueue_style('hashtag-style-main-css', get_template_directory_uri() . '/assets/css/main.css');
     wp_enqueue_style('hashtag-style-menu-css', get_template_directory_uri() . '/assets/css/style-menu.css');
@@ -208,7 +212,8 @@ function hashtag_scripts()
         'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'
     );
     // wp_enqueue_script('hashtag-boostrap-5-popper-js', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js', [], '', true);
-    // wp_enqueue_script('hashtag-boostrap-5-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js', [], '', true);
+
+     wp_enqueue_script('hashtag-boostrap-5-js', 'https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js', [], '', true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
