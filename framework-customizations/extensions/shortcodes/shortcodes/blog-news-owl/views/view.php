@@ -30,7 +30,7 @@ $query = new WP_Query( [ 'category_name' => $atts['category'], 'posts_per_page' 
             ) ?: 'https://i.pinimg.com/originals/c3/5d/f3/c35df3a6a3b629a7170837d73ed41b93.jpg';
             ?>
             <div class="col h-100">
-                <div class="card h-100">
+                <div class="card mx-3 mx-md-0 h-100">
                     <img src="<?= $img_url; ?>" class="card-img-top"
                          alt="<?= $WPost->post_title ?>">
                     <div class="card-body">

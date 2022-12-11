@@ -9,11 +9,6 @@ $options = [
         'type'    => 'select',
         'choices' => FW_Shortcode_Blog_Slider::getPostCategories()
     ],
-    'headers'     => [
-        'type'  => 'text',
-        'label' => __('Заголовок', 'fw'),
-        'desc'  => __('Заголовок для отображения', 'fw'),
-    ],
     'amount_news' => [
         'type'  => 'text',
         'value' => '4',
