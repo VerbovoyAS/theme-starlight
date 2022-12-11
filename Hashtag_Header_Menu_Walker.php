@@ -1,6 +1,8 @@
 <?php
 
-
+/**
+ * @deprecated
+ */
 class Hashtag_Header_Menu_Walker extends Walker_Nav_Menu {
 
 	/**

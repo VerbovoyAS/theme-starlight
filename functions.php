@@ -6,11 +6,8 @@
  * @package hashtag
  */
 
-//  require_once get_template_directory() . '/Hashtag_Header_Menu_Walker.php';
-
-/* START ПОДКЛЮЧЕНИЕ СТИЛЕЙ ДЛЯ КОРРЕКТНОГО МЕНЮ BOOTSTRAB */
-require_once(get_template_directory() . '/Hashtag_Header_Menu_Walker.php');
-/* /END ПОДКЛЮЧЕНИЕ СТИЛЕЙ ДЛЯ КОРРЕКТНОГО МЕНЮ BOOTSTRAB */
+/* подключение стилей для корректного меню bootstrab 5 */
+require_once(get_template_directory() . '/bootstrap_5_wp_nav_menu_walker.php');
 
 if (!defined('_S_VERSION')) {
     // Replace the version number of the theme on each release.
