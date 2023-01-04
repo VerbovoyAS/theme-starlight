@@ -8,7 +8,7 @@
 <a class="hashtag-imagebox-link" href="<?php echo $atts['link'] ?? '#'; ?>">
     <div class="hashtag-imagebox-custom hashtag-imagebox-1 ">
         <img src="<?php echo $atts['image']['url'] ?? ''; ?>" alt="avatar"
-             class="rounded img-fluid rounded-3" style="width: 150px;">
+             class="rounded img-fluid rounded-3 d-inline" style="width: 150px;">
         <div class="">
             <div class="hashtag-imagebox-title">
                 <h3><?php echo $atts['title']; ?></h3>

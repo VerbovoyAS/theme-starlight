@@ -27,7 +27,16 @@ if ( ! empty( $atts['video'] ) ) {
 
 $section_style   = ( $bg_color || $bg_image ) ? 'style="' . esc_attr($bg_color . $bg_image) . '"' : '';
 $container_class = ( isset( $atts['is_fullwidth'] ) && $atts['is_fullwidth'] ) ? 'container-fluid' : 'container';
- 
+
+/** OWL карусель для элементов внутри секции */
+$items =  $atts['owl_items'] ?? 4;
+$itemsTable = $atts['owl_items-table'] ??  3;
+$itemsMobile = $atts['owl_items-mobile'] ?? 1;
+$owl_class = '';
+if(!empty($atts['owl_style'])) {
+    $owl_class = 'owl-carousel owl-theme';
+}
+
 /**
  * Стили для рамок внутри сексии
  */
@@ -37,7 +46,27 @@ if ( !empty($atts['custom_style']) && ((boolean)$atts['custom_style']) ) {
 }
 ?>
 <section class="main-row <?php echo esc_attr($section_extra_classes) ?>" <?php echo $section_style; ?> <?php echo $bg_video_data_attr; ?>>
-	<div class="p-0 <?php echo esc_attr($container_class); ?>">
+	<div class="p-0 <?php echo esc_attr($container_class); ?> <?php echo esc_attr($owl_class); ?>">
 		<?php echo do_shortcode( $content ); ?>
 	</div>
 </section>
+
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        autoHeight:true,
+        responsive: {
+            0: {
+                items: <?= $itemsMobile ?>
+            },
+            600: {
+                items: <?= $itemsTable ?>
+            },
+            1000: {
+                items: <?= $items ?>
+            }
+        }
+    })
+</script>
